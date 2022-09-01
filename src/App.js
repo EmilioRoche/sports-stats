@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Sports from './components/Sports';
 import Nav from './components/Nav';
 import Content from './components/Content';
+import Header from './components/Header';
 
 function App(){
   return ( 
@@ -15,6 +16,7 @@ function App(){
             </Routes>
           </Nav>
         </header>
+        <Header />
       </div>
     </Router>
   );
