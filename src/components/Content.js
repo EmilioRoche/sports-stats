@@ -3,10 +3,12 @@ import MainTextBox from './MainTextBox';
 import axios from 'axios';
 
 function Content() {
-    function load() {
-        axios.get("https://stats-sports-api.herokuapp.com").then((response) => response.json()).then((data) => {
-            setSport(data.sport);
-        })
+    async function load() {
+        axios.get("https://stats-sports-api.herokuapp.com").then(response => {
+            const sportsData = response.data.data;
+            console.log(sportsData);
+            setSport(sportsData);
+        });
     }
     /*
     function loadContent() {
@@ -19,7 +21,7 @@ function Content() {
     )}
     */
     const [sport, setSport] = useState("");
-    useEffect( () => {load()});
+    useEffect( () => {load()}, []);
 
     return(
         <>
