@@ -8,6 +8,7 @@ function Content() {
             setSport(data.sport);
         })
     }
+    /*
     function loadContent() {
         fetch("https://stats-sports-api.herokuapp.com", {
             mode: 'no-cors',
@@ -16,6 +17,7 @@ function Content() {
             setSport(data.sport);
         }
     )}
+    */
     const [sport, setSport] = useState("");
     useEffect( () => {load()});
 
