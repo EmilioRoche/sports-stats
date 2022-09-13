@@ -1,25 +1,19 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Sports from './components/Sports';
 import Nav from './components/Nav';
 import Content from './components/Content';
 import Header from './components/Header';
+import FootballPage from './components/FootballPage'
 
 function App(){
 
   return ( 
     <Router>
-      <div className="App">
-        <header className="App-header">
-          <Nav>
           <Routes>
-            <Route path="/sports-stats" index element={<Sports />} />
+            <Route path="/sports-stats" element={<><Nav/><Header/><Content/></>}/>
+            <Route path="/sports-stats/Football" element={<><Nav/><FootballPage/></>}/>
             </Routes>
-          </Nav>
-        </header>
-        <Header />
-        <Content/>
-      </div>
+        
     </Router>
   );
 }
