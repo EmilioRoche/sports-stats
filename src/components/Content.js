@@ -10,7 +10,7 @@ function Content() {
         return(
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <h2 class="h4 fw-bolder">{sport.name}</h2>
-                    <p>name in paragraph</p>
+                    <p>paragraph</p>
                         <a class="text-decoration-none" href="#!">
                             Dummy data
                             <i class="bi bi-arrow-right"></i>
@@ -36,7 +36,7 @@ function Content() {
             //console.log(sportsData);
             setSports(sportsData);
         }).catch(error => console.error(`Error: ${error}`));
-        /*
+        /* need to fix this where it goes to MainTextBox
         return(
             <MainTextBox data={sport}/>
         )*/
