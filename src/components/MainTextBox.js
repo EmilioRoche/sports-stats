@@ -1,28 +1,18 @@
 import React from "react";
 
-function MainTextBox(props) {
-    const displaySport = (props) => {
-        const {sports} = props;
+//fix this so to separate content.js with maintextbox
+function MainTextBox(sports) {
+    sports.map((sport) => {
         return(
-            sports.map(sport => {
-                console.log(sport.id);
-                return(
-                    <section>
-                        <div>
-                        <h2>sport: {sport.name} </h2>
-                    </div>
-                    </section>
-                )
-            })
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h2 class="h4 fw-bolder">{sport.name}</h2>
+                        <a class="text-decoration-none" href="">
+                            click here for {sport.name} stats
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+            </div>
         )
-    }
-
-    return(
-        <>
-            {displaySport(props)}
-        </>
-    )
-    
+    })  
 }
 
 

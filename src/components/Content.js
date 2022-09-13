@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import MainTextBox from './MainTextBox';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Content() {
     const [sports, setSports] = useState([]);
@@ -10,9 +11,13 @@ function Content() {
         return(
             <div class="col-lg-4 mb-5 mb-lg-0">
                 <h2 class="h4 fw-bolder">{sport.name}</h2>
-                    <p>paragraph</p>
-                        <a class="text-decoration-none" href="#!">
-                            Dummy data
+                        <a class="fs-5">
+                            <Link to={{
+                                pathname: `/sports-stats/${sport.name}`,
+                                state: sport.id
+                            }}>
+                            {sport.name} stats
+                            </Link>
                             <i class="bi bi-arrow-right"></i>
                         </a>
             </div>
@@ -30,11 +35,13 @@ function Content() {
             </section>
         </>
     );
-    function load() {
-        axios.get("https://stats-sports-api.herokuapp.com").then(response => {
-            const sportsData = response.data.data;
-            //console.log(sportsData);
-            setSports(sportsData);
+    async function load() {
+        await axios.get("https://stats-sports-api.herokuapp.com").then(response => {
+            console.log(response);
+            if(response.data.message !== "You have exceeded the MONTHLY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/tipsters/api/sportscore1"){
+                const sportsData = response.data.data;
+                setSports(sportsData);
+            }
         }).catch(error => console.error(`Error: ${error}`));
         /* need to fix this where it goes to MainTextBox
         return(
