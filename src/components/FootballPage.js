@@ -1,12 +1,17 @@
 import React, {useEffect, useState} from "react";
-import axios from 'axios';
-import Compare from '../functions/Compare';
+//import axios from 'axios';
+import * as API from '../functions/API';
+//import Compare from '../functions/Compare';
 
 function FootballPage(props) {
     //const leagueID = props.location.state;
 
     const [standings, setStandings] = useState([]);
-    useEffect( () => {load();}, []);
+    useEffect( () => {
+        async function getPremData() {
+            const premData = await API.getAPI("https://stats-sports-api.herokuapp.com/Football");
+            setStandings(premData);
+        } getPremData();}, []);
 
     const useStandings = standings.map((teamData) => {
         return(
@@ -44,6 +49,7 @@ function FootballPage(props) {
                 </table>
         </div>
     )
+    /*
     async function load() {
         await axios.get("https://stats-sports-api.herokuapp.com/Football").then(response => {
             console.log(response);
@@ -57,8 +63,8 @@ function FootballPage(props) {
         /* need to fix this where it goes to MainTextBox
         return(
             <MainTextBox data={sport}/>
-        )*/
-    }
+        )
+    }*/
 }
 
 export default FootballPage;
