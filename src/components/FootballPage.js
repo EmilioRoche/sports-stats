@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from 'axios';
+import Compare from '../functions/Compare';
 
 function FootballPage(props) {
     //const leagueID = props.location.state;
@@ -48,7 +49,7 @@ function FootballPage(props) {
             console.log(response);
             if(response.data.message !== "You have exceeded the MONTHLY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/tipsters/api/sportscore1"){
                 const premierFootballData = response.data.data[0].standings_rows;
-                premierFootballData.sort(compare);
+                premierFootballData.sort(Compare);
                 //console.log(premierFootballData);
                 setStandings(premierFootballData);
             }
@@ -57,19 +58,6 @@ function FootballPage(props) {
         return(
             <MainTextBox data={sport}/>
         )*/
-    }
-
-    function compare(a,b) {
-        const positionA = a.position;
-        const positionB = b.position;
-        let comparison = 0;
-        if(positionA > positionB){
-            comparison = 1;
-        }
-        else if(positionA < positionB){
-            comparison = -1;
-        }
-        return comparison;
     }
 }
 
