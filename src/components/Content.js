@@ -14,6 +14,7 @@ function Content() {
                         <a class="fs-5">
                             <Link to={{
                                 pathname: `/sports-stats/${sport.name}`,
+                                //don't think i need the sport.id here maybe?
                                 state: sport.id
                             }}>
                             {sport.name} stats
