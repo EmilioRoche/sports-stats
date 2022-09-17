@@ -1,11 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import MainTextBox from './MainTextBox';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
+import * as API from '../functions/API';
 
 function Content() {
     const [sports, setSports] = useState([]);
-    useEffect( () => {load();}, []);
+    useEffect( () => {
+        async function getSportData(){
+            const response = await API.getAPI("https://stats-sports-api.herokuapp.com");
+            const sData = response.data.data;
+            setSports(sData);
+        } getSportData();}, []);
 
     const useSports = sports.map((sport) => {
         return(
@@ -36,18 +41,5 @@ function Content() {
             </section>
         </>
     );
-    async function load() {
-        await axios.get("https://stats-sports-api.herokuapp.com").then(response => {
-            console.log(response);
-            if(response.data.message !== "You have exceeded the MONTHLY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/tipsters/api/sportscore1"){
-                const sportsData = response.data.data;
-                setSports(sportsData);
-            }
-        }).catch(error => console.error(`Error: ${error}`));
-        /* need to fix this where it goes to MainTextBox
-        return(
-            <MainTextBox data={sport}/>
-        )*/
-    }
 }
 export default Content;
