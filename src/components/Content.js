@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import MainTextBox from './MainTextBox';
 import { Link } from 'react-router-dom';
 import * as API from '../functions/API';
 
