@@ -12,7 +12,8 @@ function App(){
           <Routes>
             <Route path="/sports-stats" element={<><Nav/><Header/><Content/></>}/>
             <Route path="/sports-stats/Football" element={<><Nav/><FootballPage/></>}/>
-            </Routes>
+            <Route path="/sports-stats/Football/Prem" element={<><Nav/><FootballPage/></>}/>
+          </Routes>
         
     </Router>
   );
