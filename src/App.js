@@ -3,8 +3,13 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Nav from './components/Nav';
 import Content from './components/Content';
 import Header from './components/Header';
-import FootballPage from './components/FootballPage'
+import FootballPage from './components/FootballPage';
 import PremLeague from './components/PremLeague';
+import SerieALeague from './components/SerieALeague';
+import LigueLeague from './components/LigueLeague';
+import CPLLeague from './components/CPLLeague';
+import LigaLeague from './components/LigaLeague';
+import BundesLeague from './components/BundesLeague';
 
 function App(){
 
@@ -14,6 +19,11 @@ function App(){
             <Route path="/sports-stats" element={<><Nav/><Header/><Content/></>}/>
             <Route path="/sports-stats/Football" element={<><Nav/><FootballPage/></>}/>
             <Route path="/sports-stats/Football/Prem" element={<><Nav/><PremLeague/></>}/>
+            <Route path="/sports-stats/Football/LaLiga" element={<><Nav/><LigaLeague/></>}/>
+            <Route path="/sports-stats/Football/Ligue1" element={<><Nav/><LigueLeague/></>}/>
+            <Route path="/sports-stats/Football/SerieA" element={<><Nav/><SerieALeague/></>}/>
+            <Route path="/sports-stats/Football/Bundesliga" element={<><Nav/><BundesLeague/></>}/>
+            <Route path="/sports-stats/Football/CPL" element={<><Nav/><CPLLeague/></>}/>
           </Routes>
     </Router>
   );

@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-//import axios from 'axios';
 import * as API from '../functions/API';
 import Compare from '../functions/Compare';
 import StandingsTemplate from "./StandingsTemplate";
