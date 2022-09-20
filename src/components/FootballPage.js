@@ -1,7 +1,4 @@
-import React, {useEffect, useState} from "react";
-//import axios from 'axios';
-import * as API from '../functions/API';
-import Compare from '../functions/Compare';
+
 
 function FootballPage() {
     //create a database for this

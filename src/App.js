@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import Content from './components/Content';
 import Header from './components/Header';
 import FootballPage from './components/FootballPage'
+import PremLeague from './components/PremLeague';
 
 function App(){
 
@@ -12,9 +13,8 @@ function App(){
           <Routes>
             <Route path="/sports-stats" element={<><Nav/><Header/><Content/></>}/>
             <Route path="/sports-stats/Football" element={<><Nav/><FootballPage/></>}/>
-            <Route path="/sports-stats/Football/Prem" element={<><Nav/><FootballPage/></>}/>
+            <Route path="/sports-stats/Football/Prem" element={<><Nav/><PremLeague/></>}/>
           </Routes>
-        
     </Router>
   );
 }
