@@ -1,7 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Nav from './components/Nav';
-import Content from './components/Content';
 import Header from './components/Header';
 import FootballPage from './components/FootballPage';
 import PremLeague from './components/PremLeague';
@@ -12,12 +11,14 @@ import LigaLeague from './components/LigaLeague';
 import BundesLeague from './components/BundesLeague';
 
 function App(){
-
+/* will use this for later iterations
+<Route path="/sports-stats" element={<><Nav/><Header/><Content/></>}/>
+<Route path="/sports-stats/Football" element={<><Nav/><FootballPage/></>}/>
+*/
   return ( 
     <Router>
           <Routes>
-            <Route path="/sports-stats" element={<><Nav/><Header/><Content/></>}/>
-            <Route path="/sports-stats/Football" element={<><Nav/><FootballPage/></>}/>
+            <Route path="/sports-stats" element={<><Nav/><Header/><FootballPage/></>}/>
             <Route path="/sports-stats/Football/Prem" element={<><Nav/><PremLeague/></>}/>
             <Route path="/sports-stats/Football/LaLiga" element={<><Nav/><LigaLeague/></>}/>
             <Route path="/sports-stats/Football/Ligue1" element={<><Nav/><LigueLeague/></>}/>
