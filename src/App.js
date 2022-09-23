@@ -12,12 +12,12 @@ import LigaLeague from './components/LigaLeague';
 import BundesLeague from './components/BundesLeague';
 
 function App(){
-
+//<Route path="/sports-stats" element={<><Nav/><Header/><Content/></>}/>
   return ( 
     <Router>
           <Routes>
-            <Route path="/sports-stats" element={<><Nav/><Header/><Content/></>}/>
-            <Route path="/sports-stats/Football" element={<><Nav/><FootballPage/></>}/>
+            
+            <Route path="/sports-stats" element={<><Nav/><Header/><FootballPage/></>}/>
             <Route path="/sports-stats/Football/Prem" element={<><Nav/><PremLeague/></>}/>
             <Route path="/sports-stats/Football/LaLiga" element={<><Nav/><LigaLeague/></>}/>
             <Route path="/sports-stats/Football/Ligue1" element={<><Nav/><LigueLeague/></>}/>
