@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Nav from './components/Nav';
-import Content from './components/Content';
+//import Content from './components/Content';
 import Header from './components/Header';
 import FootballPage from './components/FootballPage';
 import PremLeague from './components/PremLeague';
@@ -14,9 +14,8 @@ import BundesLeague from './components/BundesLeague';
 function App(){
 //<Route path="/sports-stats" element={<><Nav/><Header/><Content/></>}/>
   return ( 
-    <Router>
+    <Router basename={process.env.BASEURL}>
           <Routes>
-            
             <Route path="/sports-stats" element={<><Nav/><Header/><FootballPage/></>}/>
             <Route path="/sports-stats/Football/Prem" element={<><Nav/><PremLeague/></>}/>
             <Route path="/sports-stats/Football/LaLiga" element={<><Nav/><LigaLeague/></>}/>
