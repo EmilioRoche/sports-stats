@@ -9,7 +9,7 @@ function CPLLeague() {
         async function getCPLData() {
             const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/CPL");
             const CPLData = response.data;
-            CPLData.sort(Compare);
+            //CPLData.sort(Compare);
             setStandings(CPLData);
         } getCPLData();}, []);
 

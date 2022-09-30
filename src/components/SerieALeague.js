@@ -9,7 +9,7 @@ function SerieALeague() {
         async function getSerieAData() {
             const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/SerieA");
             const serieAData = response.data;
-            serieAData.sort(Compare);
+            //serieAData.sort(Compare);
             setStandings(serieAData);
         } getSerieAData();}, []);
 

@@ -9,7 +9,7 @@ function LigaLeague() {
         async function getLigaData() {
             const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/LaLiga");
             const ligaData = response.data;
-            ligaData.sort(Compare);
+            //ligaData.sort(Compare);
             setStandings(ligaData);
         } getLigaData();}, []);
 

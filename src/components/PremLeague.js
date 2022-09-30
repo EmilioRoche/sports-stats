@@ -11,7 +11,7 @@ function PremLeague(props) {
         async function getPremData() {
             const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/Prem");
             const premData = response.data;
-            premData.sort(Compare);
+            //premData.sort(Compare);
             setStandings(premData);
         } getPremData();}, []);
 
