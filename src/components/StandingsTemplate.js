@@ -8,13 +8,13 @@ function StandingsTemplate(league) {
             <tbody>
                 <tr class="col">
                     <td>{teamData.position}</td>
-                    <td>{teamData.team.name}</td>
-                    <td>{teamData.fields.matches_total}</td>
-                    <td>{teamData.fields.wins_total}</td>
-                    <td>{teamData.fields.draws_total}</td>
-                    <td>{teamData.fields.losses_total}</td>
-                    <td>{teamData.fields.score_diff_formatted_total}</td>
-                    <td>{teamData.fields.points_total}</td>
+                    <td>{teamData.name}</td>
+                    <td>{teamData.matches}</td>
+                    <td>{teamData.wins}</td>
+                    <td>{teamData.draws}</td>
+                    <td>{teamData.losses}</td>
+                    <td>{teamData.goal_diff}</td>
+                    <td>{teamData.points}</td>
                 </tr>
             </tbody>
         )

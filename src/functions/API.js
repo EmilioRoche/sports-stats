@@ -1,5 +1,4 @@
 import axios from 'axios';
-import Compare from './Compare';
 
 export const getAPI = (url) => axios.get(url).then(response => {
     //console.log(response);

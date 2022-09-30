@@ -8,7 +8,7 @@ function LigueLeague() {
     useEffect( () => {
         async function getLigueData() {
             const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/Ligue1");
-            const ligueData = response.data.data[0].standings_rows;
+            const ligueData = response.data;
             ligueData.sort(Compare);
             setStandings(ligueData);
         } getLigueData();}, []);
