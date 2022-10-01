@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from "react";
 import * as API from '../functions/API';
 import StandingsTemplate from "./StandingsTemplate";
+import TeamsTemplate from "./TeamsTemplate";
 
 function LigueLeague() {
     const [standings, setStandings] = useState([]);
+    const [teams, setTeams] = useState([]);
     useEffect( () => {
         async function getLigueData() {
             const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/Ligue1");
@@ -11,11 +13,22 @@ function LigueLeague() {
             //ligueData.sort(Compare);
             setStandings(ligueData);
         } getLigueData();}, []);
+    useEffect( () => {
+        async function getTeamData() {
+            const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/Ligue1/Teams");
+            const ligueTeamData = response.data;
+            setTeams(ligueTeamData);
+        } getTeamData();}, []);
 
-    const template = StandingsTemplate(standings);
+    const template1 = StandingsTemplate(standings);
+
+    const template2 = TeamsTemplate(teams, 'Ligue1');
     return(
         <>
-        {template}
+        <div style={{ display: "inline"}}>
+            {template1}
+            {template2}
+        </div>
         </>
     )
 }

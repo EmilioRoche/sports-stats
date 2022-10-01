@@ -4,8 +4,6 @@ import StandingsTemplate from "./StandingsTemplate";
 import TeamsTemplate from "./TeamsTemplate";
 
 function PremLeague(props) {
-    //const leagueID = props.location.state;
-
     const [standings, setStandings] = useState([]);
 
     const [teams, setTeams] = useState([]);

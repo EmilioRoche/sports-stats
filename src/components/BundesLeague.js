@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from "react";
 import * as API from '../functions/API';
 import StandingsTemplate from "./StandingsTemplate";
+import TeamsTemplate from "./TeamsTemplate";
 
 function BundesLeague() {
     const [standings, setStandings] = useState([]);
+    const [teams, setTeams] = useState([]);
     useEffect( () => {
         async function getBundesData() {
             const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/Bundesliga");
@@ -11,11 +13,23 @@ function BundesLeague() {
             //bundesData.sort(Compare);
             setStandings(bundesData);
         } getBundesData();}, []);
+    
+    useEffect( () => {
+        async function getTeamData() {
+            const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/Bundesliga/Teams");
+            const bundesTeamData = response.data;
+            setTeams(bundesTeamData);
+        } getTeamData();}, []);
 
-    const template = StandingsTemplate(standings);
+    const template1 = StandingsTemplate(standings);
+    const template2 = TeamsTemplate(teams, 'Bundesliga');
+
     return(
         <>
-        {template}
+        <div style={{ display: "inline"}}>
+            {template1}
+            {template2}
+        </div>
         </>
     )
 }
