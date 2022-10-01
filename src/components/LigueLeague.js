@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import * as API from '../functions/API';
-import Compare from '../functions/Compare';
 import StandingsTemplate from "./StandingsTemplate";
 
 function LigueLeague() {
