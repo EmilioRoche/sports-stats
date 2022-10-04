@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import * as API from '../functions/API';
-import StandingsTemplate from "./StandingsTemplate";
-import TeamsTemplate from "./TeamsTemplate";
+import StandingsTemplate from "../templates/StandingsTemplate";
+import TeamsTemplate from "../templates/TeamsTemplate";
 
 function LigueLeague() {
     const [standings, setStandings] = useState([]);
@@ -10,7 +10,6 @@ function LigueLeague() {
         async function getLigueData() {
             const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/Ligue1");
             const ligueData = response.data;
-            //ligueData.sort(Compare);
             setStandings(ligueData);
         } getLigueData();}, []);
     useEffect( () => {
