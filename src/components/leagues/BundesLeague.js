@@ -8,7 +8,7 @@ function BundesLeague() {
     const [teams, setTeams] = useState([]);
     useEffect( () => {
         async function getBundesData() {
-            const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/Bundesliga");
+            const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/Bundesliga/Standings");
             const bundesData = response.data;
             setStandings(bundesData);
         } getBundesData();}, []);

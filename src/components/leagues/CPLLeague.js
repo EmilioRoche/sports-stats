@@ -8,7 +8,7 @@ function CPLLeague() {
     const [teams, setTeams] = useState([]);
     useEffect( () => {
         async function getCPLData() {
-            const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/CPL");
+            const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/CPL/Standings");
             const CPLData = response.data;
             setStandings(CPLData);
         } getCPLData();}, []);

@@ -8,7 +8,7 @@ function LigaLeague() {
     const [teams, setTeams] = useState([]);
     useEffect( () => {
         async function getLigaData() {
-            const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/LaLiga");
+            const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/LaLiga/Standings");
             const ligaData = response.data;
             setStandings(ligaData);
         } getLigaData();}, []);

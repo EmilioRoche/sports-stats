@@ -10,7 +10,7 @@ function PremLeague(props) {
 
     useEffect( () => {
         async function getPremData() {
-            const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/Prem");
+            const response = await API.getAPI("https://stats-sports-api.herokuapp.com/Football/Prem/Standings");
             const premData = response.data;
             setStandings(premData);
         } getPremData();}, []);
