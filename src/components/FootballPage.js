@@ -19,9 +19,11 @@ function FootballPage() {
                             </div>
                             <span class="text-muted">{league.name}</span>
                             <div class="d-grid" style={{paddingTop: "1em"}}>
-                                <a class="btn btn-primary" href={league.endpoint}>
-                                    Choose League</a>
+                                <div>
+                                    <a class="btn btn-primary" href={league.endpoint+"/Standings"} style={{marginRight:"1em"}}>Standings</a>
+                                    <a class="btn btn-primary" href={league.endpoint+"/Teams"} style={{marginLeft:"1em"}}>Teams</a>
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>
