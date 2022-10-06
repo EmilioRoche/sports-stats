@@ -14,6 +14,7 @@ import BundesLeague from './components/leagues/BundesLeague';
 */
 import Error from './components/Error';
 import Standings from './components/Standings';
+import Teams from './components/Teams';
 
 function App(){
 //<Route path="/sports-stats" element={<><Nav/><Header/><Content/></>}/>
@@ -25,6 +26,7 @@ function App(){
           <Routes>
             <Route path="/sports-stats" element={<><Nav/><Header/><FootballPage/></>}/>
             <Route path="/sports-stats/Football/:id" element={<><Nav/><Standings/></>}/>
+            <Route path="/sports-stats/Football/:id/Teams" element={<><Nav/><Teams/></>}/>
             <Route path="*" element={<Error></Error>}/>
           </Routes>
     </Router>

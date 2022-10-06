@@ -11,7 +11,7 @@ function Standings(){
 
     useEffect( () => {
         async function getStandingsData() {
-            let query = "https://stats-sports-api.herokuapp.com/Football/" + id;
+            let query = "https://stats-sports-api.herokuapp.com/Football/" + id + "/Standings";
             const response = await API.getAPI(query);
             const standingsData = response.data;
             setStandings(standingsData);
