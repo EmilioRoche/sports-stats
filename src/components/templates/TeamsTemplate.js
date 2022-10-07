@@ -3,8 +3,6 @@ import React from "react";
 function TeamsTemplate(teams, leagueName) {
     var path = '/sports-stats/Football/' + leagueName;
     const useTeams = teams.map((element) => {
-        //var newPathName = element.name;
-        //newPathName = newPathName.replace(/\s+/g, '');
         return(
             <div key={element.team_id} class="col-lg-6 col-xl-4" style={{paddingBottom: "3em"}}>
                     <div class="card mb-5 mb-xl-0">

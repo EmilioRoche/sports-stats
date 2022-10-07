@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import * as API from '../functions/API';
-import ProfileTemplate from "./templates/ProfileTemplate";
+import TeamProfileTemplate from "./templates/TeamProfileTemplate";
 
 function TeamProfile(){
     const {id, name} = useParams();
@@ -18,11 +18,23 @@ function TeamProfile(){
             getTeamData();
         },[id,name]);
 
-    const template = ProfileTemplate(team);
+    const template = TeamProfileTemplate(team);
     return(
         <>
-        <div>
-            {template}
+        <div class="container">
+            <div class="main-section">
+                <div class="row gutters-sm">
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-column align-items-center text-center">
+                                    {template}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         </>
     );
