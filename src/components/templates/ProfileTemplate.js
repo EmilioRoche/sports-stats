@@ -1,8 +1,12 @@
-import react from 'react';
 
-function ProfileTemplate(){
+
+function ProfileTemplate(team){
+    //const element = team;
     return (
         <>
+        <div>
+            Hello
+        </div>
         </>
     );
 }

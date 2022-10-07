@@ -1,12 +1,12 @@
 import React from "react";
 
 function TeamsTemplate(teams, leagueName) {
-    var path = '/sports-stats/Football/' + leagueName + "/";
+    var path = '/sports-stats/Football/' + leagueName;
     const useTeams = teams.map((element) => {
-        var newPathName = element.name;
-        newPathName = newPathName.replace(/\s+/g, '');
+        //var newPathName = element.name;
+        //newPathName = newPathName.replace(/\s+/g, '');
         return(
-            <div key={newPathName} class="col-lg-6 col-xl-4" style={{paddingBottom: "3em"}}>
+            <div key={element.team_id} class="col-lg-6 col-xl-4" style={{paddingBottom: "3em"}}>
                     <div class="card mb-5 mb-xl-0">
                         <div class="card-body p-5">
                             <div class="mb-3" style={{ display: "flex", flexDirection: "row"}}>
@@ -14,7 +14,7 @@ function TeamsTemplate(teams, leagueName) {
                                 <span class="text-muted" style={{paddingLeft: "2em", paddingTop: "2em"}}>{element.name}</span>
                             </div>
                             <div class="d-grid" style={{paddingTop: "1em"}}>
-                                <a class="btn btn-primary" href={path + newPathName}>
+                                <a class="btn btn-primary" href={path + "/Teams/" + element.team_id}>
                                     Details</a>
                                 </div>
                         </div>

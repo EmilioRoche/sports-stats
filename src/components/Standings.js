@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import * as API from '../functions/API';
 import StandingsTemplate from "./templates/StandingsTemplate";
-//import TeamsTemplate from "../templates/TeamsTemplate";
 
 function Standings(){
     const {id} = useParams();
