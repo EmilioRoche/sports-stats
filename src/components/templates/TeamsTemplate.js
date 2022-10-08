@@ -8,8 +8,8 @@ function TeamsTemplate(teams, leagueName) {
                     <div class="card mb-5 mb-xl-0">
                         <div class="card-body p-5">
                             <div class="mb-3" style={{ display: "flex", flexDirection: "row"}}>
-                                <img alt={element.name} src={element.logo} style={{width: '40%'}}></img>
-                                <span class="text-muted" style={{paddingLeft: "2em", paddingTop: "2em"}}>{element.name}</span>
+                                <img alt={element.team_name} src={element.logo} style={{width: '40%'}}></img>
+                                <span class="text-muted" style={{paddingLeft: "2em", paddingTop: "2em"}}>{element.team_name}</span>
                             </div>
                             <div class="d-grid" style={{paddingTop: "1em"}}>
                                 <a class="btn btn-primary" href={path + "/Teams/" + element.team_id}>
