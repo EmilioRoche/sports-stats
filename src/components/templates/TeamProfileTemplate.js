@@ -6,8 +6,10 @@ function TeamProfileTemplate(element){
             <div class="mt-3">
                 <img src={profile.logo} alt="Team-Logo" class="rounded" width="150"/>
                 <h4>{profile.team_name}</h4>
-                <p class="text-secondary mb-1">Manager: {profile.manager_id}</p>
-                <p class="text-muted font-size-sm">Venue: {profile.venue_id}</p>
+                <p class="text-secondary mb-1"><strong>Venue: </strong>{profile.stadium_name}</p>
+                <p class="text-secondary mb-1"><strong>Capacity: </strong>{profile.capacity} people</p>
+                <p class="text-secondary mb-1"><strong>Country: </strong>{profile.country_name}</p>
+                
             </div>
             
         )

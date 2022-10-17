@@ -1,8 +1,8 @@
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import React, {useEffect, useState} from "react";
 import * as API from '../functions/API';
-import TeamProfileTemplate from "./templates/TeamProfileTemplate";
 import PlayerProfileTemplate from "./templates/PlayerProfileTemplate";
+import TeamProfileTemplate from "./templates/TeamProfileTemplate";
 
 function TeamProfile(){
     const {id, name} = useParams();
@@ -36,8 +36,8 @@ function TeamProfile(){
         <>
         <div class="container">
             <div class="main-section">
-                <div class="row gutters-sm">
-                    <div class="col-md-4 mb-3">
+                <div class="row gx-5">
+                    <div class="col-lg-4 lg-12">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex flex-column align-items-center text-center">
@@ -46,6 +46,15 @@ function TeamProfile(){
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="col-md-8">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    {teamTemplate}
+                                </div>
+                            </div>
+                        </div>
+
                 </div>
                 <div class="col-md-14">
                         <div class="card mb-3">
