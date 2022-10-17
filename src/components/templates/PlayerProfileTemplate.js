@@ -3,10 +3,11 @@ import CurrencyConv from "../../functions/CurrencyConv";
 function PlayerProfileTemplate(element){
     const useProfile = element.map((profile) => {
         const height = profile.height;
+        const newHeight = (Math.round(height*100)/100).toFixed(2);
         const currency = CurrencyConv(profile.market_value);
         return (
             <div class="col-xl-6 col-lg-7 col-md-12" style={{paddingBottom: "2em"}}>
-                <div class="card profile-header">
+                <div class="card profile-header bg-light">
                     <div class="body">
                         <div class="row">
                             <div class="col-lg-4 col-md-4 col-12">
@@ -21,7 +22,7 @@ function PlayerProfileTemplate(element){
                                         <h6 class="mb-14"><strong>Position</strong></h6>
                                     </div>
                                     <div class="col-6 text-secondary">
-                                        {profile.position_name}
+                                        {profile.position_name || "Unavailable"}
                                     </div>
                                 </div>
                                 <div class="row">
@@ -29,7 +30,7 @@ function PlayerProfileTemplate(element){
                                         <h6 class="mb-0"><strong>Shirt Number</strong></h6>
                                     </div>
                                     <div class="col-6 text-secondary">
-                                        {profile.shirt_number}
+                                        {profile.shirt_number || "Unavailable"}
                                     </div>
                                 </div>
                                 <div class="row">
@@ -37,7 +38,7 @@ function PlayerProfileTemplate(element){
                                         <h6 class="mb-0"><strong>Nationality</strong></h6>
                                     </div>
                                     <div class="col-6 text-secondary">
-                                        {profile.nationality}
+                                        {profile.nationality || "Unavailable"}
                                     </div>
                                 </div>
                                 <div class="row">
@@ -45,7 +46,7 @@ function PlayerProfileTemplate(element){
                                         <h6 class="mb-0"><strong>Preferred Foot</strong></h6>
                                     </div>
                                     <div class="col-6 text-secondary">
-                                        {profile.preferred_foot}
+                                        {profile.preferred_foot || "Unavailable"}
                                     </div>
                                 </div>
                                 <div class="row">
@@ -53,7 +54,7 @@ function PlayerProfileTemplate(element){
                                         <h6 class="mb-14"><strong>Age</strong></h6>
                                     </div>
                                     <div class="col-6 text-secondary">
-                                        {profile.age}
+                                        {profile.age || "Unavailable"}
                                     </div>
                                 </div>
                                 <div class="row">
@@ -61,7 +62,7 @@ function PlayerProfileTemplate(element){
                                         <h6 class="mb-0"><strong>Height</strong>(Metres)</h6>
                                     </div>
                                     <div class="col-6 text-secondary">
-                                        {(Math.round(height*100)/100).toFixed(2)}
+                                        {newHeight}
                                     </div>
                                 </div>
                                 <div class="row">
